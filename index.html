@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techstaff L1 — Roadmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="spotlight"></div>
+<button id="menu-toggle" aria-label="Меню">☰</button>
+<div id="sidebar-overlay"></div>
+
+<aside id="sidebar">
+  <div class="brand">TECHSTAFF <span>L1</span></div>
+
+  <div class="side-section">
+    <div class="side-label">ТЕМА</div>
+    <div class="theme-list" id="theme-list"></div>
+  </div>
+
+  <div class="side-section">
+    <div class="side-label">ПРОФИЛЬ</div>
+    <div id="profile-block">
+      <button class="github-btn" id="github-btn">
+        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        <span>Войти через GitHub</span>
+      </button>
+      <div class="profile-name" id="profile-name" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div id="save-indicator"><span class="save-dot"></span><span id="save-text">не сохранялось</span></div>
+</aside>
+
+<div id="modal-overlay">
+  <div class="modal">
+    <h3>Вход через GitHub</h3>
+    <p>Полноценный OAuth здесь не подключен — это лёгкая идентификация по имени, чтобы прогресс сохранялся отдельно для каждого человека на этой странице.</p>
+    <input type="text" id="modal-username" placeholder="ваш GitHub-логин или имя">
+    <div class="modal-actions">
+      <button id="modal-cancel">Отмена</button>
+      <button class="primary" id="modal-confirm">Войти</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="app">
+  <header>
+    <div class="eyebrow"><span class="dot"></span><span>L1 SUPPORT · ROADMAP</span></div>
+    <h1><span class="roadmap-highlight">Roadmap</span>: техподдержка L1</h1>
+    <p>Отмечай пункты по мере изучения — прогресс и графики обновляются автоматически и сохраняются между сессиями.</p>
+
+    <div class="panel intro-panel">
+      <p class="intro-lead">
+        <b>Техподдержка Л1</b> (Level 1, «первая линия») — это первая точка контакта пользователя с ИТ:
+        приём обращений, диагностика типовых проблем по инструкциям и скриптам, и, если задача выходит
+        за рамки типовой, — грамотная эскалация на вторую (L2) или третью (L3) линию. Эта роадмап-страница
+        собирает знания и навыки, которые нужны специалисту первой линии, чтобы уверенно закрывать заявки
+        и понимать, когда и куда передавать более сложный кейс.
+      </p>
+
+     
+    <div class="panel tip-card" id="tip-card" style="display:none;">
+      <span class="tip-icon">💡</span>
+      <div class="tip-body">
+        <b>СОВЕТ ДНЯ</b>
+        <span id="tip-text"></span>
+      </div>
+      <button class="tip-close" id="tip-close" aria-label="Скрыть совет">×</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="roadmap-search" placeholder="Поиск по пунктам роадмапа…">
+        <span class="search-kbd">/</span>
+      </div>
+      <div class="quick-nav">
+        <button class="quick-nav-btn" data-target="TECH">Технические знания</button>
+        <button class="quick-nav-btn" data-target="SUP">Инструменты и процессы</button>
+        <button class="quick-nav-btn" data-target="SOFT">Гибкие навыки</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="no-results" id="no-results">Ничего не найдено по запросу.</div>
+  <div class="load-note" id="loading">Загрузка прогресса…</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
